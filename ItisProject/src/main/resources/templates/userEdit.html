@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/userEdit.css" th:href="@{/css/userEdit.css}" rel="stylesheet" />>
+</head>
+<body>
+<div class="editPage">
+    <div class="editPageTitle">
+        Данные
+    </div>
+    <form action="#" th:action="@{/edit}" method="post" th:object="${user}">
+        <table>
+            <input type="text" th:field="*{id}" value="${user.id}" required hidden="hidden">
+            <tr><th>User name:</th><td><input type="text" th:field="*{userName}" value="${user.userName}" required></td></tr>
+            <tr><th>Email:</th><td><input type="email" th:field="*{email}" value="${user.email}" required></td></tr>
+            <tr><td colspan="2" align="center"><input type="submit" value="Update"></td></tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

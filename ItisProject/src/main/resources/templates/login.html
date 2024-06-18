@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login page</title>
+    <meta charset="utf-8" />
+    <link href="../static/css/login.css" th:href="@{/css/login.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="loginPage">
+    <div class="loginPageTitle">
+        Войдите
+    </div>
+
+    <p th:if="${loginError}" class="error" align="center">Wrong user or password</p>
+    <form th:action="@{/login}" method="post">
+        <table>
+            <tr><th><label for="username">Email:</label></th>
+            <td><input type="text" id="username" name="username" autofocus="autofocus" placeholder="Введите Email"/></td></tr>
+            <tr><th><label for="password">Password:</label></th>
+            <td><input type="password" id="password" name="password" placeholder="Введите пароль"/></td></tr>
+            <tr><td colspan="2" align="center"><input type="submit" value="Login" /></td></tr>
+        </table>
+    </form>
+    <body link="white">
+    <p align="center"><a href="/">Вернуться на главную</a></p>
+    </body>
+</div>
+
+</body>
+</html>

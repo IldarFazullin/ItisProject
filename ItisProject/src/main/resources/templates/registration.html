@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link href="../static/css/registration.css" th:href="@{/css/registration.css}" rel="stylesheet" />
+</head>
+
+<body>
+<div class="registrationPage">
+    <div class="registrationPageTitle">
+        Новый пользователь
+    </div>
+    <p th:if="${registerError}" class="error" align="center">User with this email already exists</p>
+    <form action="#" th:action="@{/register}" method="post" th:object="${user}">
+        <table>
+            <tr><th>First name:</th><td><input type="text" th:field="*{userName}" placeholder="User Name" required></td>
+            <tr><th>Email:</th><td><input type="email" th:field="*{email}" placeholder="Email" required></td>
+            <tr><th>Password:</th><td><input type="password" th:field="*{password}" placeholder="Password" required></td>
+            <tr><td colspan="2" align="center"><input type="submit" value="Register"></td></tr>
+        </table>
+    </form>
+    <body link="white">
+    <p align="center"><a href="/" >Вернуться на главную</a></p>
+    </body>
+</div>
+
+</body>
+</html>

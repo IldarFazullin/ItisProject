@@ -1,0 +1,25 @@
+.registrationPageTitle{
+    background: rgb(52, 56, 61);
+    text-align: center;
+    color: white;
+    font-family: Arial;
+    font-size: 35px;
+    width: 350px;
+    padding: 10px;
+    border-radius: 15px 15px 0px 0px;
+    }
+
+.registrationPage{
+    position: relative;
+    border-radius: 15px;
+    background: rgb(79, 85, 97);
+    border: 1px rgb(79, 85, 97);
+    width: 370px;
+    top: 50%;
+    left: 40%;
+    }
+
+table {
+    display:flex;
+    justify-content: center;
+    }

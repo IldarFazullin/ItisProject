@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Home page</title>
+    <meta charset="utf-8" />
+    <link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="homePage">
+    <div class="homePageTitle">
+        Меню
+    </div>
+
+    <div sec:authorize="!isAuthenticated()" class="homePageOptions">
+        <a href="/register"><button class="buttonMainPage">Register</button></a><br>
+        <a href="/login"><button class="buttonMainPage">Login</button></a>
+    </div>
+
+    <div sec:authorize="isAuthenticated()" class="homePageOptions">
+        <div th:fragment="logout">
+
+            <div sec:authorize="hasAuthority('unsecure')">
+                <a href="/account"><button class="buttonMainPage">My page</button></a>
+
+                <div sec:authorize="hasAuthority('secure')">
+                    <a href="/allUsers"><button class="buttonMainPage">All users</button></a>
+                </div>
+            </div>
+
+            <div>
+                <form action="#" th:action="@{/logout}" method="post">
+                    <input type="submit" value="Logout" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

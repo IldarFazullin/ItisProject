@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/admin/allUsers.css" th:href="@{/css/admin/allUsers.css}" rel="stylesheet" />
+</head>
+<body>
+<div th:object="${users}">
+    <div>
+        <h1>База зарегистрированных пользователей</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>User name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Удалить</th>
+                <th>Редактировать</th>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}" color="white"></td>
+                <td th:text="${user.userName}" color="white"></td>
+                <td th:text="${user.email}" color="white"></td>
+                <td th:text="${user.password}" color="white"></td>
+                <td><a th:href="@{/delete/{id}(id = ${user.id})}">delete</a> </td>
+                <td><a th:href="@{/admin_edit/{id}(id = ${user.id})}">edit</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<body link="white">
+<p><a href="/">Вернуться на главную</a></p>
+</body>
+</body>
+</html>

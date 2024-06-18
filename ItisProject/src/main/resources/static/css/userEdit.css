@@ -1,0 +1,29 @@
+.editPageTitle{
+    background: rgb(52, 56, 61);
+    text-align: center;
+    color: white;
+    font-family: Arial;
+    font-size: 40px;
+    width: 350px;
+    padding: 0px 0px 5px 10px;
+    border-radius: 15px 15px 0px 0px;
+    }
+
+.editPage{
+    display:flex;
+    position: relative;
+    justify-content: right;
+    flex-direction: column;
+    border-radius: 15px;
+    background: rgb(79, 85, 97);
+    border: 1px rgb(79, 85, 97);
+    width: 360px;
+    box-shadow: 3px 5px 7px #393939;
+    top: 50%;
+    left: 40%;
+    }
+
+table {
+    display:flex;
+    justify-content: center;
+    }

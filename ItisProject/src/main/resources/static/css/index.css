@@ -1,0 +1,48 @@
+.homePage {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    padding: 2px 16px;
+    border-radius: 15px;
+    background: rgb(79, 85, 97);
+    top: 50%;
+    left: 40%;
+    }
+
+.homePage::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 332px;
+    height: 70px;
+    background: rgb(52, 56, 61);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    }
+
+.homePageTitle {
+    text-align: center;
+    color: white;
+    font-family: Arial;
+    font-size: 40px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1000
+    }
+
+.homePageOptions{
+    text-align: center;
+    }
+
+.buttonMainPage{
+    width: 150px;
+    height: 30px;
+    border: 2px solid rgb(10, 60, 89);
+
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    }

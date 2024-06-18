@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/userAccount.css" th:href="@{/css/userAccount.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="userPage">
+    <div class="userPageTitle">
+        Аккаунт
+    </div>
+    <div th:object="${loggedUser}">
+        <table>
+            <tr><th>ID </th><td th:text="${loggedUser.id}" hidden="hidden"></td></tr>
+            <tr><th>User name </th><td th:text="${loggedUser.userName}"></td></tr>
+            <tr><th>Email </th><td th:text="${loggedUser.email}"></td></tr>
+        </table>
+    </div>
+
+    <p align="center"><a th:href="@{/edit/{id}(id = ${loggedUser.id})}"><button>Edit.</button></a> <br></p>
+    <div>
+        <form action="#" th:action="@{/logout}" method="post">
+            <p align="center"><input type="submit" value="Logout"/></p>
+        </form>
+    </div>
+    <body link="white">
+    <p align="center"><a href="/">Вернуться на гланую</a></p>
+    </body>
+</div>
+
+</body>
+</html>
