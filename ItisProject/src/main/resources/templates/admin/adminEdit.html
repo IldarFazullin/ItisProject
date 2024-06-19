@@ -10,10 +10,10 @@
     <div class="editPageTitle">
         Данные
     </div>
-    <form action="#" th:action="@{/edit}" method="post" th:object="${user}">
+    <form action="#" th:action="@{/admin_edit}" method="post" th:object="${user}">
         <table>
             <input type="text" th:field="*{id}" value="${user.id}" required hidden="hidden">
-            <tr><th>First name:</th><td><input type="text" th:field="*{userName}" value="${user.userName}" required></td></tr>
+            <tr><th>User name:</th><td><input type="text" th:field="*{userName}" value="${user.userName}" required></td></tr>
             <tr><th>Email:</th><td><input type="email" th:field="*{email}" value="${user.email}" required></td></tr>
             <tr><td colspan="2" align="center"><input type="submit" value="Update"></td></tr>
         </table>

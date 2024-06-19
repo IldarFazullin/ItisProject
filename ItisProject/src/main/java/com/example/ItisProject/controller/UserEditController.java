@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @PreAuthorize("hasAuthority('unsecure')")
-@RequestMapping("edit")
+@RequestMapping("/edit")
 public class UserEditController {
 
     @Autowired
@@ -27,16 +27,7 @@ public class UserEditController {
     public String updateUser(@ModelAttribute("user") User user) throws ClientException {
         this.user = user;
         userService.updateUserInDatabase(user);
-
-        return "redirect:/account";
+        return "redirect:/login";
     }
 
-
-
-//    @PostMapping
-//    public String updateUser(@ModelAttribute("user") User user) throws ClientException {
-//        this.user = user;
-//        userService.updateUserInDatabase(user);
-//        return "redirect:/account";
-//    }
 }
